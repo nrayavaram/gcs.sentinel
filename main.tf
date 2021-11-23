@@ -26,14 +26,11 @@ resource "google_storage_bucket" "GCS" {
 
 }
 
-resource "google_kms_crypto_key" "secret" {
- name     = "${local.resource_prefix}-<name>-key"
- labels   = locals.labels
- key_ring = var.kms_keyring
+resource "google_storage_bucket" "example" {
+ project              = "<PROJECT_ID>"
+ name                 = "${local.resource_prefix}-<name>-gcsbucket"
+ labels               = locals.labels
+ default_kms_key_name = google_kms_crypto_key.secret.name
  ...
-}
-
-data "google_storage_project_service_account" "gcs_account" {
- project = "airline1-sabre-wolverine"
 }
 
