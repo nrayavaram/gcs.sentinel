@@ -31,6 +31,5 @@ resource "google_storage_bucket" "example" {
  name                 = "${local.resource_prefix}-<name>-gcsbucket"
  labels               = locals.labels
  default_kms_key_name = google_kms_crypto_key.secret.name
- ...
 }
 
