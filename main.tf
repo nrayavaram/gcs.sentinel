@@ -25,3 +25,15 @@ resource "google_storage_bucket" "GCS" {
   }
 
 }
+
+resource "google_kms_crypto_key" "secret" {
+ name     = "${local.resource_prefix}-<name>-key"
+ labels   = locals.labels
+ key_ring = var.kms_keyring
+ ...
+}
+
+data "google_storage_project_service_account" "gcs_account" {
+ project = "<PROJECT_ID>"
+}
+
