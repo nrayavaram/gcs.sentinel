@@ -34,6 +34,6 @@ resource "google_kms_crypto_key" "secret" {
 }
 
 data "google_storage_project_service_account" "gcs_account" {
- project = "<PROJECT_ID>"
+ project = "airline1-sabre-wolverine"
 }
 
