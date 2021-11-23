@@ -6,7 +6,7 @@ provider "google" {
 
 
 resource "google_storage_bucket" "GCS" {
-  name          = "my-dev-appid-strg-demo-dlpjob"
+  name          = "my-dev-appid-strg-demo-gcsbucket"
   location      = "US"
   force_destroy = true
   versioning {
